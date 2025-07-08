@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'custom': ['Roboto', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- Static Navbar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50 px-6 py-4">
+      <div class="flex items-center justify-between max-w-7xl mx-auto">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="apes.svg" alt="APES Logo" class="h-auto w-60" />
+        </div>
+        
+        <!-- Navigation Links (optional) -->
+        <div class="hidden md:flex space-x-8">
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-montserrat font-medium">Inicio</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-montserrat font-medium">Servicios</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-montserrat font-medium">Productos</a>
+          <a href="#" class="text-gray-700 hover:text-blue-600 font-montserrat font-medium">Contacto</a>
+        </div>
+        
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button class="text-gray-700 hover:text-blue-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- Home -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4">
+	    <!--    <img src="apes.svg" alt="Logo Principal" class="w-60 mb-6" />-->
+      <h1 class="text-6xl font-bold mb-2 font-custom">Aplicadores Especializados</h1>
+      <p class="text-lg text-gray-600">Productos SIKA y Soluciones para la Construcción</p>
+      <img src="sika.svg" alt="Logo Secundario" class="w-24 mt-6" />
+    </section>
+    <!-- 📖 ABOUT Section -->
+    <section id="about" class="py-20 px-6 bg-gray-50">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6">Sobre Nosotros</h2>
+        <p class="text-lg text-gray-700">
+          Aplicaciones Especiales S.A. forma parte de Grupo PRIMSA, que desde 1993 brinda servicios profesionales
+          y productos especializados para la construcción, mantenimiento y reparación de obras civiles.
+        </p>
+        <p class="mt-4 text-gray-600">
+          Actualmente, Grupo PRIMSA se conforma de tres empresas que atienden diversas necesidades en el sector.
+        </p>
+      </div>
+    </section>
+    <section class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 font-montserrat mb-4">Nuestros Clientes</h2>
+      <p class="text-lg text-gray-600 font-montserrat">Empresas que confían en nuestros servicios especializados</p>
+    </div>
+
+    <!-- Logos Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+      <!-- Client Logo 1 -->
+      <div class="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+        <img src="precon.jpg" alt="Cliente 1" class="h-12 w-auto transition-opacity duration-300" />
+      </div>
+
+      <!-- Client Logo 2 -->
+      <div class="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+        <img src="altamira.png" alt="Cliente 2" class="h-12 w-auto transition-opacity duration-300" />
+      </div>
+      <!-- Client Logo 2 -->
+      <div class="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+        <img src="solid.png" alt="Cliente 2" class="h-12 w-auto transition-opacity duration-300" />
+      </div>
+
+      <!-- Client Logo 2 -->
+      <div class="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+        <img src="cayala.png" alt="Cliente 2" class="h-12 w-auto transition-opacity duration-300" />
+      </div>
+      <!-- Client Logo 2 -->
+      <div class="flex items-center justify-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300">
+        <img src="proceres.png" alt="Cliente 2" class="h-12 w-auto transition-opacity duration-300" />
+      </div>
+    </div>
+
+    <!-- Optional: Trust Message -->
+    <div class="text-center mt-12">
+      <p class="text-gray-600 font-montserrat">
+        Más de <span class="font-bold text-blue-600">200+ empresas</span> confían en nuestros servicios especializados
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- 🧰 SERVICIOS COMPLEMENTARIOS Section -->
+    <section id="complementarios" class="py-20 px-6">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">Servicios Complementarios</h2>
+        <p class="text-center text-lg text-gray-600 mb-12">
+          Servicios que complementan la aplicación de productos SIKA, necesarios antes o después de la instalación.
+        </p>
+
+        <div class="grid gap-8 md:grid-cols-3">
+          <!-- Card 1 -->
+          <div class="bg-white rounded shadow p-6 text-center hover:shadow-lg transition">
+            <img src="image.svg" alt="Diagnóstico" class="w-20 h-20 mx-auto mb-4" />
+            <h3 class="text-xl font-semibold">Diagnóstico y diseño estructural</h3>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white rounded shadow p-6 text-center hover:shadow-lg transition">
+            <img src="image.svg" alt="Albañilería" class="w-20 h-20 mx-auto mb-4" />
+            <h3 class="text-xl font-semibold">Trabajos de albañilería</h3>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white rounded shadow p-6 text-center hover:shadow-lg transition">
+            <img src="image.svg" alt="Plomería" class="w-20 h-20 mx-auto mb-4" />
+            <h3 class="text-xl font-semibold">Trabajos de plomería</h3>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white rounded shadow p-6 text-center hover:shadow-lg transition">
+            <img src="image.svg" alt="Herrería" class="w-20 h-20 mx-auto mb-4" />
+            <h3 class="text-xl font-semibold">Trabajo de herrería</h3>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-white rounded shadow p-6 text-center hover:shadow-lg transition">
+            <img src="image.svg" alt="Herrería" class="w-20 h-20 mx-auto mb-4" />
+            <h3 class="text-xl font-semibold">Trabajos de carpinteria</h3>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-white rounded shadow p-6 text-center hover:shadow-lg transition">
+            <img src="image.svg" alt="Electricidad" class="w-20 h-20 mx-auto mb-4" />
+            <h3 class="text-xl font-semibold">Trabajos de electricidad</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
