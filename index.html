@@ -24,31 +24,53 @@
   <body>
     <div id="app"></div>
     <!-- Static Navbar -->
-    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50 px-6 py-4">
-      <div class="flex items-center justify-between max-w-7xl mx-auto">
-        <!-- Logo -->
-        <div class="flex items-center">
-          <img src="apes.svg" alt="APES Logo" class="h-auto w-60" />
-        </div>
-        
-        <!-- Navigation Links (optional) -->
-        <div class="hidden md:flex space-x-8">
-          <a href="#" class="text-gray-700 hover:text-blue-600 font-montserrat font-medium">Inicio</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600 font-montserrat font-medium">Servicios</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600 font-montserrat font-medium">Productos</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600 font-montserrat font-medium">Contacto</a>
-        </div>
-        
-        <!-- Mobile menu button -->
-        <div class="md:hidden">
-          <button class="text-gray-700 hover:text-blue-600">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </nav>
+    <nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50 px-6 py-4 transition-all duration-300" id="navbar">
+  <div class="flex items-center justify-between max-w-7xl mx-auto">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <img src="apes.svg" alt="APES Logo" class="h-auto w-60 transition-all duration-300" id="navbar-logo" />
+    </div>
+
+    <!-- Navigation Links (optional) -->
+    <div class="hidden md:flex space-x-8">
+      <a href="#" class="text-gray-700 hover:text-blue-600 font-montserrat font-medium">Inicio</a>
+      <a href="#" class="text-gray-700 hover:text-blue-600 font-montserrat font-medium">Servicios</a>
+      <a href="#" class="text-gray-700 hover:text-blue-600 font-montserrat font-medium">Productos</a>
+      <a href="#" class="text-gray-700 hover:text-blue-600 font-montserrat font-medium">Contacto</a>
+    </div>
+
+    <!-- Mobile menu button -->
+    <div class="md:hidden">
+      <button class="text-gray-700 hover:text-blue-600">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+    <script>
+// Navbar scroll behavior
+window.addEventListener('scroll', function() {
+  const navbar = document.getElementById('navbar');
+  const logo = document.getElementById('navbar-logo');
+
+  if (window.scrollY > 100) {
+    // When scrolled down
+    navbar.classList.add('py-2');
+    navbar.classList.remove('py-4');
+    logo.classList.add('opacity-0', 'w-0');
+    logo.classList.remove('w-60');
+  } else {
+    // When at top
+    navbar.classList.add('py-4');
+    navbar.classList.remove('py-2');
+    logo.classList.remove('opacity-0', 'w-0');
+    logo.classList.add('w-60');
+  }
+});
+</script>
     <!-- Home -->
     <section class="min-h-screen flex flex-col justify-center items-center text-center px-4">
 	    <!--    <img src="apes.svg" alt="Logo Principal" class="w-60 mb-6" />-->
@@ -56,19 +78,46 @@
       <p class="text-lg text-gray-600">Productos SIKA y Soluciones para la Construcción</p>
       <img src="sika.svg" alt="Logo Secundario" class="w-24 mt-6" />
     </section>
-    <!-- 📖 ABOUT Section -->
-    <section id="about" class="py-20 px-6 bg-gray-50">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6">Sobre Nosotros</h2>
-        <p class="text-lg text-gray-700">
-          Aplicaciones Especiales S.A. forma parte de Grupo PRIMSA, que desde 1993 brinda servicios profesionales
-          y productos especializados para la construcción, mantenimiento y reparación de obras civiles.
-        </p>
-        <p class="mt-4 text-gray-600">
-          Actualmente, Grupo PRIMSA se conforma de tres empresas que atienden diversas necesidades en el sector.
-        </p>
-      </div>
-    </section>
+
+<!-- 📖 ABOUT Section -->
+<section id="about" class="py-20 px-6 bg-gray-50">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">Sobre Nosotros</h2>
+    <p class="text-lg text-gray-700">
+      Aplicaciones Especiales S.A. forma parte de Grupo PRIMSA, que desde 1993 brinda servicios profesionales
+      y productos especializados para la construcción, mantenimiento y reparación de obras civiles.
+    </p>
+    <p class="mt-4 text-gray-600">
+      Actualmente, Grupo PRIMSA se conforma de tres empresas que atienden diversas necesidades en el sector.
+    </p>
+  </div>
+
+  <!-- 💖 Horizontally Aligned Cards -->
+  <div class="mt-12 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+    <!-- Card 1 -->
+    <div class="bg-white rounded shadow p-6 hover:shadow-lg transition">
+      <img src="prisma.png" alt="Empresa 1" class="w-24 h-24 mx-auto mb-4" />
+      <h3 class="text-xl font-semibold text-gray-800">PRIMSA Guatemala S.A.</h3>
+      <p class="mt-2 text-gray-600 text-sm">Distribución y servicios especializados en el mercado nacional.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white rounded shadow p-6 hover:shadow-lg transition">
+      <img src="apes.svg" alt="Empresa 2" class="w-24 h-24 mx-auto mb-4" />
+      <h3 class="text-xl font-semibold text-gray-800">Aplicaciones Especiales S.A.</h3>
+      <p class="mt-2 text-gray-600 text-sm">Aplicaciones especializadas de impermeabilización y protección.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded shadow p-6 hover:shadow-lg transition">
+      <img src="adyre.png" alt="Empresa 3" class="w-24 h-24 mx-auto mb-4" />
+      <h3 class="text-xl font-semibold text-gray-800">Ingeniería y Prefabricados</h3>
+      <p class="mt-2 text-gray-600 text-sm">Servicios de ingeniería estructural y prefabricados de concreto.</p>
+    </div>
+  </div>
+</section>
+
+
     <section class="py-16 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4">
     <!-- Section Header -->
@@ -159,4 +208,43 @@
       </div>
     </section>
   </body>
+  <!-- 🌙 Footer -->
+<footer class="bg-gray-800 text-gray-200 py-12">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 text-sm">
+
+    <!-- 📮 Contact Info -->
+    <div>
+      <h3 class="text-lg font-semibold mb-3 text-white">Contáctanos</h3>
+      <ul class="space-y-2">
+        <li>Email: <a href="mailto:contacto@grupo-primsa.com" class="text-red-400 hover:underline">contacto@grupo-primsa.com</a></li>
+        <li>Teléfono: <a href="tel:+50212345678" class="hover:underline">+502 1234 5678</a></li>
+        <li>Dirección: Ciudad de Guatemala, Guatemala</li>
+      </ul>
+    </div>
+
+    <!-- 🔗 Enlaces -->
+    <div>
+      <h3 class="text-lg font-semibold mb-3 text-white">Navegación</h3>
+      <ul class="space-y-2">
+        <li><a href="#about" class="hover:underline">Sobre Nosotros</a></li>
+        <li><a href="#complementarios" class="hover:underline">Servicios</a></li>
+        <li><a href="#clientes" class="hover:underline">Clientes</a></li>
+      </ul>
+    </div>
+
+    <!-- 🧱 Empresa -->
+    <div>
+      <h3 class="text-lg font-semibold mb-3 text-white">Grupo PRIMSA</h3>
+      <p class="text-gray-400 text-sm">
+        Aplicadores especializados de productos SIKA y soluciones complementarias para la industria y la construcción desde 1993.
+      </p>
+    </div>
+  </div>
+
+  <!-- ❤️ Bottom Bar -->
+  <div class="mt-12 border-t border-gray-700 pt-6 text-center text-gray-500 text-xs">
+    © 2025 Grupo PRIMSA. Todos los derechos reservados.
+  </div>
+</footer>
+
 </html>
